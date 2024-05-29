@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import NavItem from '../ui/NavItem';
 
-import LogoImg from '../../assets/logos/logo.png';
+import LogoImg from '../../assets/logos/logos.png';
 import { BiSolidCategoryAlt } from 'react-icons/bi';
 import { IoChatboxEllipsesSharp } from 'react-icons/io5';
 import { GoOrganization } from 'react-icons/go';
@@ -15,7 +15,7 @@ function Header() {
                 <Link to='/' className='contents'>
                     <img
                         src={LogoImg}
-                        className='h-4/6 self-center'
+                        className='h-full self-center'
                         alt='Logo do EPTRAN e da Prefeitura de Joinville'
                     />
                 </Link>
@@ -24,10 +24,10 @@ function Header() {
                     <NavItem to='/categories' icon={<BiSolidCategoryAlt />}>
                         Categorias
                     </NavItem>
-                    <NavItem to='/about-us' icon={<IoChatboxEllipsesSharp />}>
+                    <NavItem to='/about-us' icon={<GoOrganization />}>
                         Sobre Nós
                     </NavItem>
-                    <NavItem to='/contact' icon={<GoOrganization />}>
+                    <NavItem to='/contact' icon={<IoChatboxEllipsesSharp />}>
                         Contato
                     </NavItem>
                 </div>

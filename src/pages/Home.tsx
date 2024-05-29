@@ -7,7 +7,7 @@ function Home() {
             <Section>
                 <h1>Hello, World!</h1>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, dolor. Hic, inventore! Ullam
+                    Lorem dsdasdasdasdasdasdasd dolor, sit amet consectetur adipisicing elit. Vitae, dolor. Hic, inventore! Ullam
                     ratione tenetur eveniet. Eius, et temporibus vel eos cupiditate ex, necessitatibus corrupti deleniti
                     fugiat provident, repudiandae itaque.
                 </p>
