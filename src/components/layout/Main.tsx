@@ -1,11 +1,21 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
 interface MainProps {
-    children: React.ReactNode;
+    className?: string;
+    children: ReactNode;
 }
 
-function Main({ children }: MainProps) {
-    return <div className='w-full h-fit flex justify-center even-child:text-4xl'>{children}</div>;
+function Main({ children, className }: MainProps) {
+    return (
+        <div
+            className={`w-full h-fit flex 
+            flex-col items-center 
+            ${className}`}
+        >
+            {children}
+        </div>
+    );
 }
 
 export default Main;
+

@@ -1,8 +1,6 @@
 import EptranImg from '../../assets/logos/eptran-logo.png';
 import JoinvilleImg from '../../assets/logos/joinville-logo.png';
-import YoutubeImg from '../../assets/icons/youtube-logo.svg';
-import FacebookImg from '../../assets/icons/facebook-logo.svg';
-import InstagramImg from '../../assets/icons/instagram-logo.svg';
+import { FaYoutube, FaFacebook, FaInstagram } from 'react-icons/fa';
 
 function Footer() {
     return (
@@ -27,17 +25,17 @@ function Footer() {
                 <div className='flex list-none justify-between'>
                     <li>
                         <a href='https://youtube.com/' rel='noreferrer' target='_blank'>
-                            <img className='w-[40px]' src={YoutubeImg} alt='Youtube' />
+                            <FaYoutube size={40} color='white' />
                         </a>
                     </li>
                     <li>
                         <a href='https://facebook.com/' rel='noreferrer' target='_blank'>
-                            <img className='w-[40px]' src={FacebookImg} alt='Facebook' />
+                            <FaFacebook size={40} color='white' />
                         </a>
                     </li>
                     <li>
                         <a href='https://instagram.com/' rel='noreferrer' target='_blank'>
-                            <img className='w-[40px]' src={InstagramImg} alt='Instagram' />
+                            <FaInstagram size={40} color='white' />
                         </a>
                     </li>
                 </div>
@@ -48,3 +46,4 @@ function Footer() {
 }
 
 export default Footer;
+

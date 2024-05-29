@@ -1,5 +1,3 @@
-import plugin from 'tailwindcss/plugin';
-
 /** @type {import('tailwindcss').Config} */
 export default {
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -11,14 +9,6 @@ export default {
             },
         },
     },
-    plugins: [
-        plugin(function ({ addVariant, e }) {
-            addVariant('even-child', ({ modifySelectors, separator }) => {
-                modifySelectors(({ className }) => {
-                    return `.${e(`even-child${separator}${className}`)}:nth-child(even)`;
-                });
-            });
-        }),
-    ],
+    plugins: [],
 };
 
