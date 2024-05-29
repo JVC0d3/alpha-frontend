@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import NavItem from '../ui/NavItem';
 
-import LogoImg from '../../assets/logos/logos.png';
+import LogosImg from '../../assets/logos/main-logos.png';
 import { BiSolidCategoryAlt } from 'react-icons/bi';
 import { IoChatboxEllipsesSharp } from 'react-icons/io5';
 import { GoOrganization } from 'react-icons/go';
@@ -14,8 +14,8 @@ function Header() {
             <div className={`w-full md:w-4/5 flex justify-between`}>
                 <Link to='/' className='contents'>
                     <img
-                        src={LogoImg}
-                        className='h-full self-center'
+                        src={LogosImg}
+                        className='h-5/6 self-center'
                         alt='Logo do EPTRAN e da Prefeitura de Joinville'
                     />
                 </Link>
