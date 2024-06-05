@@ -23,4 +23,3 @@ function NavItem({ to, children, icon }: NavItemProps) {
 }
 
 export default NavItem;
-
