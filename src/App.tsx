@@ -3,15 +3,17 @@ import Home from './pages/Home';
 import Categories from './pages/Categories';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import Popup from './components/actions/Popup';
+import LoginPopup from './components/actions/LoginPopup';
+import RegisterPopup from './components/actions/RegisterPopup';
 import { useState } from 'react';
 
 function App() {
-    const [popupVisible, setPopupVisible] = useState<boolean>(false);
+    const [popup, setPopup] = useState<Popup>(null);
     return (
         <BrowserRouter>
-            <Popup visible={popupVisible} setVisible={setPopupVisible} />
-            <Header setPopupVisible={setPopupVisible} />
+            <LoginPopup popup={popup} setPopup={setPopup} />
+            <RegisterPopup popup={popup} setPopup={setPopup} />
+            <Header setPopupVisible={setPopup} />
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/categories' element={<Categories />} />
@@ -22,4 +24,3 @@ function App() {
 }
 
 export default App;
-

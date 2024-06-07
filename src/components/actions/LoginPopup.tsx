@@ -3,12 +3,12 @@ import Button from '../ui/Button';
 import Input from '../form/input';
 import Form from '../form';
 
-interface PopupProps extends ComponentProps<'div'> {
-    visible: boolean;
-    setVisible: Dispatch<SetStateAction<boolean>>;
+interface LoginPopupProps extends ComponentProps<'div'> {
+    popup: Popup;
+    setPopup: Dispatch<SetStateAction<Popup>>;
 }
 
-function Popup({ visible, setVisible }: PopupProps) {
+function LoginPopup({ popup: visible, setPopup: setVisible }: LoginPopupProps) {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 
@@ -20,10 +20,10 @@ function Popup({ visible, setVisible }: PopupProps) {
         <div className={`fixed w-screen h-screen ${visible ? '' : 'hidden'}`}>
             <div
                 className='w-screen h-screen fixed bg-black opacity-50 cursor-default'
-                onClick={() => setVisible(false)}
+                onClick={() => setVisible(null)}
                 role='button'
                 tabIndex={-1}
-                onKeyDown={(e) => e.key === 'Escape' && setVisible(false)}
+                onKeyDown={(e) => e.key === 'Escape' && setVisible(null)}
             ></div>
             <div className='absolute w-2/5 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-slate-50 p-10 rounded-lg'>
                 <Form.Root onSubmit={handleLogin}>
@@ -43,6 +43,16 @@ function Popup({ visible, setVisible }: PopupProps) {
                         />
                     </Input.Root>
 
+                    <Input.Root>
+                        <Input.Label>Senha Novamente</Input.Label>
+                        <Input.Field
+                            type='password'
+                            placeholder='Insira sua senha novamente'
+                            value={password}
+                            setValue={setPassword}
+                        />
+                    </Input.Root>
+
                     <Form.Link to='/register'>Não possuo uma conta</Form.Link>
                     <Form.Link to='/'>Esqueci minha senha</Form.Link>
 
@@ -55,5 +65,4 @@ function Popup({ visible, setVisible }: PopupProps) {
     );
 }
 
-export default Popup;
-
+export default LoginPopup;
