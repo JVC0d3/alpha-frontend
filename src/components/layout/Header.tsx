@@ -7,8 +7,13 @@ import { IoChatboxEllipsesSharp } from 'react-icons/io5';
 import { GoOrganization } from 'react-icons/go';
 import { FaGear } from 'react-icons/fa6';
 import Button from '../ui/Button';
+import { Dispatch, SetStateAction } from 'react';
 
-function Header() {
+interface HeaderProps {
+    setPopupVisible: Dispatch<SetStateAction<boolean>>;
+}
+
+function Header({ setPopupVisible }: HeaderProps) {
     return (
         <div className='w-full flex justify-center bg-dark-blue h-[70px]'>
             <div className={`w-full md:w-4/5 flex justify-between`}>
@@ -36,7 +41,7 @@ function Header() {
                     <Link to='/settings'>
                         <FaGear size={30} color='white' className='transition-all hover:scale-125' />
                     </Link>
-                    <Button>Entrar</Button>
+                    <Button onClick={() => setPopupVisible(true)}>Entrar</Button>
                 </div>
             </div>
         </div>
