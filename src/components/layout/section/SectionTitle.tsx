@@ -10,7 +10,7 @@ function SectionTitle({ children, link = false, to }: SectionTitleProps) {
     return (
         <>
             {link && to ? (
-                <Link to={to} className='text-4xl text-dark-blue mb-4 font-bold hover:scale-105 hover:underline'>
+                <Link to={to} className='w-fit text-4xl text-dark-blue mb-4 font-bold hover:scale-105 hover:underline'>
                     {children}
                 </Link>
             ) : (
@@ -21,4 +21,3 @@ function SectionTitle({ children, link = false, to }: SectionTitleProps) {
 }
 
 export default SectionTitle;
-
