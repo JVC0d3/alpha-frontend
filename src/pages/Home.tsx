@@ -1,5 +1,5 @@
 import Main from '../components/layout/Main';
-import Section from '../components/layout/Section';
+import Section from '../components/layout/section';
 
 import ExampleImg from '../assets/images/cars.jpg';
 
@@ -10,9 +10,9 @@ function Home() {
     return (
         <Main>
             <Section.Root>
-                <div className='flex w-full h-[50vh] rounded bg-cyan-400 p-1'>
-                    <div className='h-1/2 self-end flex flex-col justify-between items-center w-full '>
-                        <div className='flex justify-between w-full px-4 translate-y-[-50%]'>
+                <div className='flex w-full h-[50vh] rounded bg-cyan-400 p-1 z-[-2]'>
+                    <div className='h-1/2 self-end flex flex-col justify-between items-center w-full'>
+                        <div className='flex w-full justify-between px-4 -translate-y-1/2 z-[-1]'>
                             <ArrowLeft size={60} className='cursor-pointer text-white' />
                             <ArrowRight size={60} className='cursor-pointer text-white' />
                         </div>
@@ -41,3 +41,4 @@ function Home() {
 }
 
 export default Home;
+

@@ -1,7 +1,9 @@
 import Main from '../components/layout/Main';
-import Section from '../components/layout/Section';
+import Section from '../components/layout/section';
 
-import ExampleImg from '../assets/images/cars.jpg';
+import GamesImg from '../assets/images/games.jpg';
+import NewsImg from '../assets/images/news.jpg';
+import TransitLawImg from '../assets/images/transit-law.jpg';
 
 import { FaCircle } from 'react-icons/fa6';
 import { IoIosArrowBack as ArrowLeft, IoIosArrowForward as ArrowRight } from 'react-icons/io';
@@ -26,9 +28,37 @@ function Categories() {
                 </div>
             </Section.Root>
             <Section.Root className='justify-between'>
-                <Section.Img src={ExampleImg} />
+                <Section.Img src={GamesImg} link to='/games' />
                 <Section.Text>
-                    <Section.Title>Hello, World!</Section.Title>
+                    <Section.Title link to='/games'>
+                        Jogos
+                    </Section.Title>
+                    <Section.Content>
+                        Lorem ipsum dolor, sit <b>amet</b> consectetur adipisicing elit. Vitae, dolor. <b>Hic</b>,
+                        inventore! Ullam ratione tenetur eveniet. Eius, et <b>temporibus</b> vel eos cupiditate ex,
+                        necessitatibus <b>corrupti</b> deleniti fugiat provident, repudiandae itaque.
+                    </Section.Content>
+                </Section.Text>
+            </Section.Root>
+            <Section.Root className='justify-between'>
+                <Section.Img src={NewsImg} link to='/news' />
+                <Section.Text>
+                    <Section.Title link to='/news'>
+                        Notícias
+                    </Section.Title>
+                    <Section.Content>
+                        Lorem ipsum dolor, sit <b>amet</b> consectetur adipisicing elit. Vitae, dolor. <b>Hic</b>,
+                        inventore! Ullam ratione tenetur eveniet. Eius, et <b>temporibus</b> vel eos cupiditate ex,
+                        necessitatibus <b>corrupti</b> deleniti fugiat provident, repudiandae itaque.
+                    </Section.Content>
+                </Section.Text>
+            </Section.Root>
+            <Section.Root className='justify-between'>
+                <Section.Img src={TransitLawImg} link to='/laws' />
+                <Section.Text>
+                    <Section.Title link to='/laws'>
+                        Leis de Trânsito
+                    </Section.Title>
                     <Section.Content>
                         Lorem ipsum dolor, sit <b>amet</b> consectetur adipisicing elit. Vitae, dolor. <b>Hic</b>,
                         inventore! Ullam ratione tenetur eveniet. Eius, et <b>temporibus</b> vel eos cupiditate ex,
@@ -41,3 +71,4 @@ function Categories() {
 }
 
 export default Categories;
+
