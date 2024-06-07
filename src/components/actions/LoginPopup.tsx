@@ -8,7 +8,7 @@ interface LoginPopupProps extends ComponentProps<'div'> {
     setPopup: Dispatch<SetStateAction<Popup>>;
 }
 
-function LoginPopup({ popup: visible, setPopup: setVisible }: LoginPopupProps) {
+function LoginPopup({ popup, setPopup }: LoginPopupProps) {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 
@@ -17,13 +17,13 @@ function LoginPopup({ popup: visible, setPopup: setVisible }: LoginPopupProps) {
     }
 
     return (
-        <div className={`fixed w-screen h-screen ${visible ? '' : 'hidden'}`}>
+        <div className={`fixed w-screen h-screen ${popup === 'login' ? '' : 'hidden'}`}>
             <div
                 className='w-screen h-screen fixed bg-black opacity-50 cursor-default'
-                onClick={() => setVisible(null)}
+                onClick={() => setPopup(null)}
                 role='button'
                 tabIndex={-1}
-                onKeyDown={(e) => e.key === 'Escape' && setVisible(null)}
+                onKeyDown={(e) => e.key === 'Escape' && setPopup(null)}
             ></div>
             <div className='absolute w-2/5 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-slate-50 p-10 rounded-lg'>
                 <Form.Root onSubmit={handleLogin}>
@@ -43,17 +43,13 @@ function LoginPopup({ popup: visible, setPopup: setVisible }: LoginPopupProps) {
                         />
                     </Input.Root>
 
-                    <Input.Root>
-                        <Input.Label>Senha Novamente</Input.Label>
-                        <Input.Field
-                            type='password'
-                            placeholder='Insira sua senha novamente'
-                            value={password}
-                            setValue={setPassword}
-                        />
-                    </Input.Root>
-
-                    <Form.Link to='/register'>Não possuo uma conta</Form.Link>
+                    <a
+                        href='#'
+                        onClick={() => setPopup('register')}
+                        className='w-fit hover:underline hover:text-dark-blue'
+                    >
+                        Não possuo uma conta
+                    </a>
                     <Form.Link to='/'>Esqueci minha senha</Form.Link>
 
                     <Button type='submit' className='self-center' invert={true}>

@@ -13,7 +13,7 @@ function App() {
         <BrowserRouter>
             <LoginPopup popup={popup} setPopup={setPopup} />
             <RegisterPopup popup={popup} setPopup={setPopup} />
-            <Header setPopupVisible={setPopup} />
+            <Header setPopup={setPopup} />
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/categories' element={<Categories />} />
