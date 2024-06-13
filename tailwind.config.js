@@ -1,3 +1,5 @@
+import plugin from 'tailwindcss/plugin';
+
 /** @type {import('tailwindcss').Config} */
 export default {
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -9,6 +11,11 @@ export default {
             },
         },
     },
-    plugins: [],
+    plugins: [
+        plugin(({ addUtilities }) => {
+            addUtilities([
+                { '.object-center-1\\/4': { 'object-position': 'center 25%' } },
+            ]);
+        }),
+    ],
 };
-

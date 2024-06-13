@@ -8,10 +8,14 @@ import {
     IoIosArrowBack as ArrowLeft,
     IoIosArrowForward as ArrowRight,
 } from 'react-icons/io';
+import Slider from '../components/layout/slider';
 
 const Home = () => {
     return (
         <Main>
+            <Section.Root>
+                <Slider.Root />
+            </Section.Root>
             <Section.Root>
                 <div className='flex w-full h-[50vh] rounded bg-cyan-400 p-1 z-[-2]'>
                     <div className='h-1/2 self-end flex flex-col justify-between items-center w-full'>

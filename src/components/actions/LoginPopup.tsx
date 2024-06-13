@@ -24,7 +24,7 @@ const LoginPopup = ({ popup, setPopup }: LoginPopupProps) => {
 
     return (
         <div
-            className={`fixed w-screen h-screen ${popup === 'login' ? '' : 'hidden'}`}
+            className={`z-30 fixed w-full h-screen ${popup === 'login' ? '' : 'hidden'}`}
         >
             <div
                 className='w-screen h-screen fixed bg-black opacity-50 cursor-default'
