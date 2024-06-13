@@ -5,7 +5,12 @@ interface ButtonProps extends ComponentProps<'button'> {
     invert?: boolean;
 }
 
-function Button({ children, invert = false, className, ...props }: ButtonProps) {
+const Button = ({
+    children,
+    invert = false,
+    className,
+    ...props
+}: ButtonProps) => {
     return (
         <button
             {...props}
@@ -23,7 +28,6 @@ function Button({ children, invert = false, className, ...props }: ButtonProps) 
             {children}
         </button>
     );
-}
+};
 
 export default Button;
-

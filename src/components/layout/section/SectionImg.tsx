@@ -6,7 +6,7 @@ interface SectionImgProps extends ComponentProps<'img'> {
     to?: string;
 }
 
-function SectionImg({ src, alt, link, to }: SectionImgProps) {
+const SectionImg = ({ src, alt, link, to }: SectionImgProps) => {
     return (
         <>
             {link && to ? (
@@ -18,7 +18,6 @@ function SectionImg({ src, alt, link, to }: SectionImgProps) {
             )}
         </>
     );
-}
+};
 
 export default SectionImg;
-

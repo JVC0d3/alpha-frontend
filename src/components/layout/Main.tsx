@@ -5,7 +5,7 @@ interface MainProps {
     children: ReactNode;
 }
 
-function Main({ children, className }: MainProps) {
+const Main = ({ children, className }: MainProps) => {
     return (
         <div
             className={`w-full h-fit flex 
@@ -15,7 +15,6 @@ function Main({ children, className }: MainProps) {
             {children}
         </div>
     );
-}
+};
 
 export default Main;
-

@@ -13,7 +13,7 @@ interface HeaderProps {
     setPopup: Dispatch<SetStateAction<Popup>>;
 }
 
-function Header({ setPopup: setPopup }: HeaderProps) {
+const Header = ({ setPopup: setPopup }: HeaderProps) => {
     return (
         <div className='w-full flex justify-center bg-dark-blue h-[70px]'>
             <div className={`w-full md:w-4/5 flex justify-between`}>
@@ -39,13 +39,17 @@ function Header({ setPopup: setPopup }: HeaderProps) {
 
                 <div className='flex items-center gap-x-10 w-fit'>
                     <Link to='/settings'>
-                        <FaGear size={30} color='white' className='transition-all hover:scale-125' />
+                        <FaGear
+                            size={30}
+                            color='white'
+                            className='transition-all hover:scale-125'
+                        />
                     </Link>
                     <Button onClick={() => setPopup('login')}>Entrar</Button>
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default Header;

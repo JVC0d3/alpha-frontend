@@ -7,7 +7,7 @@ interface NavItemProps {
     children: string;
 }
 
-function NavItem({ to, children, icon }: NavItemProps) {
+const NavItem = ({ to, children, icon }: NavItemProps) => {
     return (
         <Link
             to={to}
@@ -19,7 +19,6 @@ function NavItem({ to, children, icon }: NavItemProps) {
             {children}
         </Link>
     );
-}
+};
 
 export default NavItem;
-
