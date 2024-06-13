@@ -5,7 +5,12 @@ interface InputFieldProps extends ComponentProps<'input'> {
     setValue: Dispatch<SetStateAction<string>>;
 }
 
-function InputField({ className, value, setValue, ...props }: InputFieldProps) {
+const InputField = ({
+    className,
+    value,
+    setValue,
+    ...props
+}: InputFieldProps) => {
     return (
         <input
             {...props}
@@ -17,7 +22,6 @@ function InputField({ className, value, setValue, ...props }: InputFieldProps) {
             )}
         />
     );
-}
+};
 
 export default InputField;
-

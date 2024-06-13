@@ -1,4 +1,10 @@
-import { ComponentProps, Dispatch, FormEvent, SetStateAction, useState } from 'react';
+import {
+    ComponentProps,
+    Dispatch,
+    FormEvent,
+    SetStateAction,
+    useState,
+} from 'react';
 import Button from '../ui/Button';
 import Input from '../form/input';
 import Form from '../form';
@@ -8,7 +14,7 @@ interface LoginPopupProps extends ComponentProps<'div'> {
     setPopup: Dispatch<SetStateAction<Popup>>;
 }
 
-function LoginPopup({ popup, setPopup }: LoginPopupProps) {
+const LoginPopup = ({ popup, setPopup }: LoginPopupProps) => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 
@@ -17,7 +23,9 @@ function LoginPopup({ popup, setPopup }: LoginPopupProps) {
     }
 
     return (
-        <div className={`fixed w-screen h-screen ${popup === 'login' ? '' : 'hidden'}`}>
+        <div
+            className={`fixed w-screen h-screen ${popup === 'login' ? '' : 'hidden'}`}
+        >
             <div
                 className='w-screen h-screen fixed bg-black opacity-50 cursor-default'
                 onClick={() => setPopup(null)}
@@ -30,7 +38,12 @@ function LoginPopup({ popup, setPopup }: LoginPopupProps) {
                     <Form.Title>Entrar</Form.Title>
                     <Input.Root>
                         <Input.Label>Email</Input.Label>
-                        <Input.Field type='email' placeholder='Insira seu email' value={email} setValue={setEmail} />
+                        <Input.Field
+                            type='email'
+                            placeholder='Insira seu email'
+                            value={email}
+                            setValue={setEmail}
+                        />
                     </Input.Root>
 
                     <Input.Root>
@@ -59,6 +72,6 @@ function LoginPopup({ popup, setPopup }: LoginPopupProps) {
             </div>
         </div>
     );
-}
+};
 
 export default LoginPopup;

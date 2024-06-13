@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-function FormTitle({ children, className }: ComponentProps<'span'>) {
+const FormTitle = ({ children, className }: ComponentProps<'span'>) => {
     return (
         <span
             className={twMerge(
@@ -12,7 +12,6 @@ function FormTitle({ children, className }: ComponentProps<'span'>) {
             {children}
         </span>
     );
-}
+};
 
 export default FormTitle;
-

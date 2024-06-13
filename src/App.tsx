@@ -7,12 +7,17 @@ import LoginPopup from './components/actions/LoginPopup';
 import RegisterPopup from './components/actions/RegisterPopup';
 import { useState } from 'react';
 
-function App() {
+const App = () => {
     const [popup, setPopup] = useState<Popup>(null);
     return (
         <BrowserRouter>
-            <LoginPopup popup={popup} setPopup={setPopup} />
-            <RegisterPopup popup={popup} setPopup={setPopup} />
+            {popup === 'login' ? (
+                <LoginPopup popup={popup} setPopup={setPopup} />
+            ) : (
+                popup === 'register' && (
+                    <RegisterPopup popup={popup} setPopup={setPopup} />
+                )
+            )}
             <Header setPopup={setPopup} />
             <Routes>
                 <Route path='/' element={<Home />} />
@@ -21,6 +26,6 @@ function App() {
             <Footer />
         </BrowserRouter>
     );
-}
+};
 
 export default App;
